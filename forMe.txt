@@ -7,3 +7,21 @@ font-family: "Bebas Neue", sans-serif;
 font-family: "Playwrite BR", cursive;
 font-family: "Lilita One", sans-serif;
 font-family: "Jersey 25 Charted", sans-serif;
+
+// todo :
+        -- change titles
+        -- put white circle behind my image
+        -- make more than one photo and change every 10s
+        -- make cards open smoothly when reached it while scrolling
+        -- PROJECTS PAGE ::
+            -- change style
+            -- divded projects into programming -- front-end  > vanilla
+                                                              > vue 
+                                                              > react
+                                                              > vite etc..
+
+                                                -- backend    > PHP/mySql 
+                                                              > nodeJS
+                                                              > firebase DB
+
+        -- with every projects write what langs, libraries, extensions i used ..

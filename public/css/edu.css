@@ -1,0 +1,159 @@
+section.edu {
+    min-height: 90vh;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding: 40px;
+    background: linear-gradient(to right, #eee 25%, #aaa 50%, var(--clr-main) 50%);
+}
+section.edu h2 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: white;
+    mix-blend-mode: overlay;
+    font-size: 34px;
+    width: fit-content;
+    margin: auto;
+}
+@media(max-width:720px){
+    section.edu h2 {
+        mix-blend-mode: unset;
+    }
+}
+section.edu h3 {
+    background-color: #eee;
+    width: fit-content;
+    margin: 50px auto 20px auto;
+    padding: 5px 10px;
+    text-transform: capitalize;
+    color: var(--clr-main);
+    border-radius: 5px;
+    position: relative;
+    text-align: center;
+}
+section.edu h3::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border-width: 15px;
+    border-style: solid;
+    border-color: #eee transparent transparent transparent;
+    bottom: -25px;
+    left: calc(50% - 15px);
+}
+section.edu .info {
+    width: 50vw;
+    margin: 10px auto;
+    /* border: 2px solid red; */
+    border-bottom: 1px solid #eee;
+    border-radius: 10px;
+}
+.info.school {
+    background-image: url("../images/shcool.jpg");
+    background-size: cover;
+}
+.info.uni {
+    background-image: url("../images/bis.webp");
+    background-size: cover;
+}
+.info.elzero {
+    background-image: url("../images/osamaElzero.jpg");
+    background-size: cover;
+}
+.info.elzero .photo {
+    width: fit-content;
+    background-color: #0075ff;
+    border-radius: 5px;
+    padding: 5px;
+    height: unset;
+    scale: .7;
+    transition: scale .6s;
+}
+.info.elzero .photo:hover {
+    scale: .8;
+}
+.info.elzero .photo img {
+
+}
+.info.index {
+    background-image: url("../images/indexCover.jpeg");
+    background-size: cover;
+}
+.info.index .photo {
+    height: unset;
+    width: fit-content;
+    scale: .8;
+    background-color: #f8bdc6;
+    border-radius: 10px;
+    padding: 5px 10px;
+    transition: scale .6s;
+}
+.info.index .photo:hover {
+    scale: .9;
+}
+.info.index .photo img {
+    width: 140px;
+}
+.info.info.arab {
+    background-image: url("../images/arabCover.png");
+    background-size: cover;
+}
+.info.arab .photo {
+    height: unset;
+    width: fit-content;
+    scale: .8;
+    background-color: #aaa;
+    color: #0075ff;
+    border-radius: 10px;
+    padding: 5px 10px;
+    transition: scale .6s;
+}
+.info.arab .photo:hover {
+    scale: .9;
+}
+.info .overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: #ffffffd1;
+    border-radius: 10px;
+    padding: 10px;
+}
+.info .place {
+    color: var(--clr-main);
+    font-weight: bold;
+    font-size: 20px;
+    max-width: 300px;
+    min-width: 40%;
+    text-align: center;
+    text-transform: capitalize;
+}
+.info .photo {
+    font-size: 28px;
+    /* background-color: #eee; */
+    width: fit-content;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: var(--clr-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.info .photo i {}
+.info .time {
+    /* color: #eee; */
+    color: #666;
+    font-size: 24px;
+}
+.grade {
+    color: forestgreen;
+    font-weight: bold;
+}
+@media(max-width: 450px) {
+    .info .place {
+        font-size: 16px;
+    }
+}

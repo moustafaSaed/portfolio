@@ -153,9 +153,13 @@ header .logo p {
     font-family: "Bebas Neue", sans-serif;
     font-size: 32px;
     letter-spacing: 3px;
-    text-shadow: 0px 10px 15px;
+    text-shadow: 0px 10px 15px var(--clr-main);
 }
-
+@media (max-width:450px) {
+    header .logo p {
+    font-size: 26px;
+    }
+}
 header .logo::first-letter {
     color: var(--clr-main, #429);
     text-transform: capitalize;
@@ -167,27 +171,30 @@ header .menu {
 
 header .menu i {
     cursor: pointer;
-    font-size: 24px;
+    font-size: 32px;
     color: #eee;
     transition: all .5s;
-    transform: rotate(90deg);
+    rotate: 90deg;
+    animation: bar 4s infinite;
 }
 
-header .menu i:hover {
-    scale: 1.25;
-    transform: rotate(0);
+header .menu i.active {
+    font-size: 35px;
+    rotate: unset;
+    animation: unset;
 }
 
 header .menu i ul {
     scale: 0;
     position: absolute;
-    width: 160px;
-    top: 48px;
-    left: -125px;
-    border-radius: 0 0 10px 10px;
+    width: 200px;
+    top: 37px;
+    left: -150px;
+    border-radius: 10px;
     background-color: #eee;
     transition: all .5s;
     box-shadow: 0px 23px 21px -14px #000;
+    z-index: 9999;
 }
 
 header .menu i ul li {
@@ -197,6 +204,7 @@ header .menu i ul li {
     transition: all .5s;
     position: relative;
     color: #422752;
+    text-align: center;
 }
 header .menu i ul li::before {
     position: absolute;
@@ -209,11 +217,19 @@ header .menu i ul li::before {
     background-color: #422752c2;
     width: 0;
 }
-header .menu i ul li:hover::before {
+header .menu i a:first-child li::before {
+    border-radius: 10px 10px 0 0;
+}
+header .menu i a:last-child li::before {
+    border-radius: 0 0 10px 10px;
+}
+header .menu i ul li:hover::before,
+header .menu i ul li.active::before {
     width: 100%;
     height: 100%;
 }
-header .menu i ul li:hover {
+header .menu i ul li:hover, 
+header .menu i ul li.active {
     color: #fff;
 }
 
@@ -227,7 +243,6 @@ header .menu i ul a:last-child li {
 }
 
 header .menu i.active {
-    scale: 1.25;
     transform: rotate(0);
 }
 
@@ -235,99 +250,19 @@ header .menu i.active ul {
     scale: 1;
 }
 
-/* Welcome Section */
-.welcome {
-    display: flex;
-    height: 90vh;
-    background: linear-gradient(to right, #eee 25%, #aaa 50%, var(--clr-main) 50%);
-}
-.welcome .txt {
-    flex: 1;
-    font-size: 28px;
-    padding-left: 80px;
-}
-.welcome .txt .info {
-}
-.welcome .txt .info p {
-    
-}
-.welcome .txt .info h1 {
-    text-transform: capitalize;
-    width: 70%;
-    color: var(--clr-main, #429);
-    font-size: 54px;
-}
-.welcome .txt .info h5 {}
-.welcome .txt .info .btns {
-    display: flex;
-    margin-top: 15px;
-    gap: 5px;
-}
-.welcome .txt .info .btns .btn {
-    border-bottom: 5px solid;
-    position: relative;
-    color: var(--clr-main, #429);
-}
-.welcome .txt .info .btns .btn::after {
-    position: absolute;
-    content:'';
-    width: 0;
-    height: 100%;
-    background-color: var(--clr-main, #429);
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all .5s;
-}
-.welcome .txt .info .btns .btn:hover::after {
-    width: 100%;
-}
-.welcome .txt .info .btns .btn:hover {
-    transform: unset;
-    color: white;
-    border-color: var(--clr-main, #429);
-}
-
-.welcome .photo {
-    flex: 1;
-    padding-right: 80px;
-    align-items: end;
-}
-.welcome .photo img {
-    width: 460px;
-}
-@media (max-width:1080px) {
-    .welcome .txt {
-        font-size: 24px;
+@keyframes bar {
+    0% {
+        scale: .9;
     }
-    .welcome .txt .info h1 {
-        font-size: 40px;
+    25% {
+        scale: 1.2;
+        text-shadow: 0 0 10px #aaa;
     }
-}
-@media (max-width:1000px) {
-    .welcome .photo {
-        padding-right: unset;
+    50% {
+        scale: .9;
     }
-    .welcome .txt {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 0;
-        background-color: #eee;
-        padding: 10px;
-        border-radius: 15px 15px 0 0;
-        width: 75vw;
-        background: linear-gradient(to right, #aaa, #eee);
-}
-}
-@media (max-width:540px) {
-    .welcome .txt {
-        font-size: 18px;
-    }
-    .welcome .txt .info h1 {
-        font-size: 32px;
-    }
-    .welcome .photo img {
-        width: 390px;
+    100% {
+        scale: 1.2;
+        text-shadow: 0 0 10px #aaa;
     }
 }
